@@ -12,26 +12,60 @@
     <title>Hang Man!</title>
 </head>
 <body>
-    <div class="container">
-        <div class="head"></div>
-        <div class="alive-left-eye"></div>
-        <div class="alive-right-eye"></div>
-        <div style="display:none;" class="dead-left-eye"></div>
-        <div style="display:none;" class="dead-left-eye-two"></div>
-        <div style="display:none;" class="dead-right-eye"></div>
-        <div style="display:none;" class="dead-right-eye-two"></div>
-        <div class="scared-mouth"></div>
-        <div class="body"></div>
-        <div class="left-arm"></div>
-        <div class="right-arm"></div>
-        <div class="left-leg"></div>
-        <div class="right-leg"></div>
-        <div class="string"></div>
-        <div class="horizontal"></div>
-        <div class="stand"></div>
-        <div class="base"></div>
-        <button onclick="selfDestruct();" type="button" class="btn btn-danger">Danger</button>
-        <button onclick="alive();" type="button" class="btn btn-primary">No Danger</button>
+    <h1 style="margin-bottom:100px; text-align:center;">Hangman!</h1>
+    <div style="text-align:center;" class="container">
+        <button onclick="testing();" type="button" class="btn btn-outline-dark">Start Game</button>
+        <button type="button" class="btn btn-outline-dark">Restart</button>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="container">
+                <img style="display:none" src="assets/images/post.png" />
+                <img style="display:none" src="assets/images/head.png" />
+                <img style="display:none" src="assets/images/body.png" />
+                <img style="display:none" src="assets/images/arm1.png" />
+                <img style="display:none" src="assets/images/arm2.png" />
+                <img style="display:none" src="assets/images/leg1.png" />
+                <img style="display:none" src="assets/images/final.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="container word-container">
+            </div>
+        </div>
+    </div>
+
+    <div class="container btn-container">
+        <button onclick="A();" type="button" class="btn btn-outline-dark" value="A">A</button>
+        <button type="button" class="btn btn-outline-dark" value="B">B</button>
+        <button type="button" class="btn btn-outline-dark" value="C">C</button>
+        <button type="button" class="btn btn-outline-dark" value="D">D</button>
+        <button type="button" class="btn btn-outline-dark" value="E">E</button>
+        <button type="button" class="btn btn-outline-dark" value="F">F</button>
+        <button type="button" class="btn btn-outline-dark" value="G">G</button>
+        <button type="button" class="btn btn-outline-dark" value="H">H</button>
+        <button type="button" class="btn btn-outline-dark" value="I">I</button>
+        <button type="button" class="btn btn-outline-dark" value="J">J</button>
+        <button type="button" class="btn btn-outline-dark" value="K">K</button>
+        <button type="button" class="btn btn-outline-dark" value="L">L</button>
+        <button type="button" class="btn btn-outline-dark" value="M">M</button>
+        <button type="button" class="btn btn-outline-dark" value="N">N</button>
+        <button type="button" class="btn btn-outline-dark" value="O">O</button>
+        <button type="button" class="btn btn-outline-dark" value="P">P</button>
+        <button type="button" class="btn btn-outline-dark" value="Q">Q</button>
+        <button type="button" class="btn btn-outline-dark" value="R">R</button>
+        <button type="button" class="btn btn-outline-dark" value="S">S</button>
+        <button type="button" class="btn btn-outline-dark" value="T">T</button>
+        <button type="button" class="btn btn-outline-dark" value="U">U</button>
+        <button type="button" class="btn btn-outline-dark" value="V">V</button>
+        <button type="button" class="btn btn-outline-dark" value="W">W</button>
+        <button type="button" class="btn btn-outline-dark" value="X">X</button>
+        <button type="button" class="btn btn-outline-dark" value="Y">Y</button>
+        <button type="button" class="btn btn-outline-dark" value="Z">Z</button>
     </div>
 
     <!-- Optional JavaScript -->

@@ -60,7 +60,7 @@ function showImage() {
         $('#image6').css("display", "none");
         $('#image7').css("display", "block");
         $('.blank-space').css("color", "black");
-        alert("You lose! The correct word was " + lettersInWord + " Click New Game to play again!");
+        alert("You lose! The correct word was " + tellUser + " Click New Game to play again!");
     }
 }
 

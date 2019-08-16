@@ -1,7 +1,7 @@
 body {
     background-color: wheat;
-}
-.drawing {
+    font-family: 'Long Cang', cursive;
+    padding-top: 300px;
 }
 .word-container {
     text-align: center;
@@ -21,4 +21,35 @@ body {
 }
 img {
     height: 300px;
+}
+.img-container {
+    padding-left: 353px;
+}
+.incorrect {
+    margin-top: 50px;
+}
+@media only screen and (max-width : 1200px) {
+    .img-container {
+        padding-left: 270px;
+    }
+}
+@media only screen and (max-width : 991px) {
+    .img-container {
+        padding-left: 129px;
+    }
+}
+@media only screen and (max-width : 767px) {
+    .img-container {
+        padding-left: 42px;
+    }
+}
+@media only screen and (max-width : 500px) {
+    .img-container {
+        padding-left: 10px;
+    }
+}
+@media only screen and (max-width : 470px) {
+    .img-container {
+        padding-left: 0px;
+    }
 }

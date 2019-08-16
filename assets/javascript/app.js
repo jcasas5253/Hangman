@@ -13,22 +13,52 @@ function startGame() {
         $('.word-container').append("<div class='blank-space'>" + lettersInWord[i] + "</div>");
     }
     $('.btn-container').css("display", "block");
-    $('.img1').css("display", "block");
     $('.incorrect').css("display", "block");
     $('.new-game').css("display", "initial");
     $('.start-game').css("display", "none");
+    $('body').css("padding-top", "100px");
+    $('#title').css("display", "none");
 }
 
-function newGame(lettersInWord) {
-    $('.word-container').empty();
-    $('.incorrect').empty();
-    $('.a-btn, .b-btn, .c-btn, .d-btn, .e-btn, .f-btn, .g-btn, .h-btn, .i-btn, .j-btn, .k-btn, .l-btn, .m-btn, .n-btn, .o-btn, .p-btn, .q-btn, .r-btn, .s-btn, .t-btn, .u-btn, .v-btn, .w-btn, .x-btn, .y-btn, .z-btn').css("display", "inline-block");
-    var random = words[Math.floor(Math.random() * words.length)];
-    lettersInWord = random.split("");
-    console.log(lettersInWord);
-    var i;
-    for (i = 0; i < lettersInWord.length; i++) {
-        $('.word-container').append("<div class='blank-space'>" + lettersInWord[i] + "</div>");
+function newGame() {
+    location.reload();  
+}
+
+
+var incorrectCounter = 0;
+
+function showImage() {
+    if (incorrectCounter === 0) {
+        $('#image1, #image2, #image3, #image4, #image5, #image6, #image7').css("display", "none");
+    }
+    if (incorrectCounter === 1) {
+        $('#image1').css("display", "block");
+    }
+    if (incorrectCounter === 2) {
+        $('#image1').css("display", "none");
+        $('#image2').css("display", "block");
+    }
+    if (incorrectCounter === 3) {
+        $('#image2').css("display", "none");
+        $('#image3').css("display", "block");
+    }
+    if (incorrectCounter === 4) {
+        $('#image3').css("display", "none");
+        $('#image4').css("display", "block");
+    }
+    if (incorrectCounter === 5) {
+        $('#image4').css("display", "none");
+        $('#image5').css("display", "block");
+    }
+    if (incorrectCounter === 6) {
+        $('#image5').css("display", "none");
+        $('#image6').css("display", "block");
+    }
+    if (incorrectCounter === 7) {
+        $('#image6').css("display", "none");
+        $('#image7').css("display", "block");
+        $('.blank-space').css("color", "black");
+        alert("You lose! Click New Game to play again!")
     }
 }
 
@@ -37,9 +67,13 @@ function A() {
         $('.blank-space:contains(a)').css("color", "black");
     }
     if (!lettersInWord.includes("a")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>A</button>");
-        $('.a-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>A</button>");       
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.a-btn').css("display", "none");
+    
 }
 
 function B() {
@@ -47,9 +81,12 @@ function B() {
         $('.blank-space:contains(b)').css("color", "black");
     }
     if (!lettersInWord.includes("b")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>B</button>");
-        $('.b-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>B</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.b-btn').css("display", "none");
 }
 
 function C() {
@@ -57,9 +94,12 @@ function C() {
         $('.blank-space:contains(c)').css("color", "black");
     } 
     if (!lettersInWord.includes("c")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>C</button>");
-        $('.c-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>C</button>");       
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.c-btn').css("display", "none");
 }
 
 function D() {
@@ -67,9 +107,12 @@ function D() {
         $('.blank-space:contains(d)').css("color", "black");
     }
     if (!lettersInWord.includes("d")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>D</button>");
-        $('.d-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>D</button>");       
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.d-btn').css("display", "none");
 }
 
 function E() {
@@ -77,9 +120,12 @@ function E() {
         $('.blank-space:contains(e)').css("color", "black");
     } 
     if (!lettersInWord.includes("e")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>E</button>");
-        $('.e-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>E</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.e-btn').css("display", "none");
 }
 
 function F() {
@@ -87,9 +133,12 @@ function F() {
         $('.blank-space:contains(f)').css("color", "black");
     } 
     if (!lettersInWord.includes("f")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>F</button>");
-        $('.f-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>F</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.f-btn').css("display", "none");
 }
 
 function G() {
@@ -97,9 +146,12 @@ function G() {
         $('.blank-space:contains(g)').css("color", "black");
     } 
     if (!lettersInWord.includes("g")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>G</button>");
-        $('.g-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>G</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.g-btn').css("display", "none");
 }
 
 function H() {
@@ -107,9 +159,12 @@ function H() {
         $('.blank-space:contains(h)').css("color", "black");
     } 
     if (!lettersInWord.includes("h")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>H</button>");
-        $('.h-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>H</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.h-btn').css("display", "none");
 }
 
 function I() {
@@ -117,9 +172,12 @@ function I() {
         $('.blank-space:contains(i)').css("color", "black");
     } 
     if (!lettersInWord.includes("i")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>I</button>");
-        $('.i-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>I</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.i-btn').css("display", "none");
 }
 
 function J() {
@@ -127,9 +185,12 @@ function J() {
         $('.blank-space:contains(j)').css("color", "black");
     } 
     if (!lettersInWord.includes("j")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>J</button>");
-        $('.j-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>J</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.j-btn').css("display", "none");
 }
 
 function K() {
@@ -137,9 +198,12 @@ function K() {
         $('.blank-space:contains(k)').css("color", "black");
     }
     if (!lettersInWord.includes("k")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>K</button>");
-        $('.k-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>K</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.k-btn').css("display", "none");
 }
 
 function L() {
@@ -147,9 +211,12 @@ function L() {
         $('.blank-space:contains(l)').css("color", "black");
     } 
     if (!lettersInWord.includes("l")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>L</button>");
-        $('.l-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>L</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.l-btn').css("display", "none");
 }
 
 function M() {
@@ -157,9 +224,12 @@ function M() {
         $('.blank-space:contains(m)').css("color", "black");
     }
     if (!lettersInWord.includes("m")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>M</button>");
-        $('.m-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>M</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.m-btn').css("display", "none");
 }
 
 function N() {
@@ -167,9 +237,12 @@ function N() {
         $('.blank-space:contains(n)').css("color", "black");
     } 
     if (!lettersInWord.includes("n")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>N</button>");
-        $('.n-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>N</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.n-btn').css("display", "none");
 }
 
 function O() {
@@ -177,9 +250,12 @@ function O() {
         $('.blank-space:contains(o)').css("color", "black");
     }
     if (!lettersInWord.includes("o")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>O</button>");
-        $('.o-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>O</button>");       
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.o-btn').css("display", "none");
 }
 
 function P() {
@@ -187,9 +263,12 @@ function P() {
         $('.blank-space:contains(p)').css("color", "black");
     } 
     if (!lettersInWord.includes("p")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>P</button>");
-        $('.p-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>P</button>");       
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.p-btn').css("display", "none");
 }
 
 function Q() {
@@ -197,9 +276,12 @@ function Q() {
         $('.blank-space:contains(q)').css("color", "black");
     } 
     if (!lettersInWord.includes("q")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>Q</button>");
-        $('.q-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>Q</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.q-btn').css("display", "none");
 }
 
 function R() {
@@ -207,9 +289,12 @@ function R() {
         $('.blank-space:contains(r)').css("color", "black");
     } 
     if (!lettersInWord.includes("r")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>R</button>");
-        $('.r-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>R</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.r-btn').css("display", "none");
 }
 
 function S() {
@@ -217,9 +302,12 @@ function S() {
         $('.blank-space:contains(s)').css("color", "black");
     } 
     if (!lettersInWord.includes("s")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>S</button>");
-        $('.s-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>S</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.s-btn').css("display", "none");
 }
 
 function T() {
@@ -227,9 +315,12 @@ function T() {
         $('.blank-space:contains(t)').css("color", "black");
     } 
     if (!lettersInWord.includes("t")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>T</button>");
-        $('.t-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>T</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.t-btn').css("display", "none");
 }
 
 function U() {
@@ -237,9 +328,12 @@ function U() {
         $('.blank-space:contains(u)').css("color", "black");
     } 
     if (!lettersInWord.includes("u")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>U</button>");
-        $('.u-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>U</button>");       
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.u-btn').css("display", "none");
 }
 
 function V() {
@@ -247,9 +341,12 @@ function V() {
         $('.blank-space:contains(v)').css("color", "black");
     } 
     if (!lettersInWord.includes("v")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>V</button>");
-        $('.v-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>V</button>");       
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.v-btn').css("display", "none");
 }
 
 function W() {
@@ -257,9 +354,12 @@ function W() {
         $('.blank-space:contains(w)').css("color", "black");
     } 
     if (!lettersInWord.includes("w")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>W</button>");
-        $('.w-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>W</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.w-btn').css("display", "none");
 }
 
 function X() {
@@ -267,18 +367,24 @@ function X() {
         $('.blank-space:contains(x)').css("color", "black");
     } 
     if (!lettersInWord.includes("x")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>X</button>");
-        $('.x-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>X</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.x-btn').css("display", "none");
 }
 function Y() {
     if ($('.blank-space:contains(y)')) {
         $('.blank-space:contains(y)').css("color", "black");
     } 
     if (!lettersInWord.includes("y")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>Y</button>");
-        $('.y-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>Y</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.y-btn').css("display", "none");
 }
 
 function Z() {
@@ -286,9 +392,12 @@ function Z() {
         $('.blank-space:contains(z)').css("color", "black");
     } 
     if (!lettersInWord.includes("z")) {
-        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>Z</button>");
-        $('.z-btn').css("display", "none");
+        $('.incorrect').append("<button  class= 'btn btn-outline-dark'>Z</button>");        
+        incorrectCounter++;
+        console.log(incorrectCounter);
+        showImage();
     }
+    $('.z-btn').css("display", "none");
 }
 
 

@@ -4,8 +4,10 @@ var words = ["abruptly", "absurd", "abyss", "affix", "askew", "avenue", "awkward
 
 var random = words[Math.floor(Math.random() * words.length)];
 var lettersInWord = [];
+var tellUser = [];
 lettersInWord = random.split("");
 console.log(lettersInWord);
+tellUser = random;
 
 function startGame() {
     var i;
